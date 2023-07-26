@@ -8,12 +8,12 @@ const API_KEY =
 
 let storedBreeds = [];
 
-loaderIndicator.style.fontWeight = 'bold';
-loaderIndicator.textContent = 'Loading data, please wait...';
-errorIndicator.textContent = '';
-selectBreed.style.display = 'none';
-// selectBreed.classList.add('is-hidden');
-// errorIndicator.classList.add('is-hidden');
+// loaderIndicator.style.fontWeight = 'bold';
+// loaderIndicator.textContent = 'Loading data, please wait...';
+// errorIndicator.textContent = '';
+// selectBreed.style.display = 'none';
+selectBreed.classList.add('is-hidden');
+errorIndicator.classList.add('is-hidden');
 
 export function fetchBreeds() {
   //console.log(BASE_URL);
@@ -33,12 +33,12 @@ export function fetchBreeds() {
       return response.json();
     })
     .then(data => {
-      selectBreed.style.display = 'block';
-      //selectBreed.classList.remove('is-hidden');
+      //selectBreed.style.display = 'block';
+      selectBreed.classList.remove('is-hidden');
       //console.log(data);
-      loaderIndicator.textContent = '';
-      loaderIndicator.style.display = 'none';
-      //loaderIndicator.classList.add('is-hidden');
+      //loaderIndicator.textContent = '';
+      //loaderIndicator.style.display = 'none';
+      loaderIndicator.classList.add('is-hidden');
       storedBreeds = data;
       //console.log('storedBreeds', storedBreeds);
       let markup = null;
@@ -64,13 +64,13 @@ export function fetchBreeds() {
       //     }
     })
     .catch(function (error) {
-      loaderIndicator.style.display = 'none';
-      errorIndicator.style.color = 'red';
-      errorIndicator.style.fontWeight = 'bold';
-      errorIndicator.textContent =
-        'Oops!! Something went wrong! Try reloading the page!';
-      //errorIndicator.classList.remove('is-hidden');
-      //loaderIndicator.classList.add('is-hidden');
+      //   loaderIndicator.style.display = 'none';
+      //   errorIndicator.style.color = 'red';
+      //   errorIndicator.style.fontWeight = 'bold';
+      //   errorIndicator.textContent =
+      //     'Oops!! Something went wrong! Try reloading the page!';
+      errorIndicator.classList.remove('is-hidden');
+      loaderIndicator.classList.add('is-hidden');
       console.log(error);
     });
 }
