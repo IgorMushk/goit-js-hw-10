@@ -1,5 +1,6 @@
 import SlimSelect from 'slim-select';
 import 'slim-select/dist/slimselect.css';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 import { fetchBreeds } from './js/cat-api';
 import { fetchCatByBreed } from './js/cat-api';
@@ -11,6 +12,10 @@ const cardBreedCat = document.querySelector('.cat-info');
 //const selectBreedCat = document.querySelector('.breed-select');
 
 let storedBreeds = [];
+
+Notify.init({
+  position: 'center-center',
+});
 
 selectBreed.classList.add('is-hidden');
 errorIndicator.classList.add('is-hidden');
@@ -31,10 +36,12 @@ fetchBreeds()
     new SlimSelect({
       select: '#selectElement',
     });
+    Notify.success('Choose a cat breed');
   })
   .catch(function (error) {
     errorIndicator.classList.remove('is-hidden');
     loaderIndicator.classList.add('is-hidden');
+    Notify.failure('Oops! Something went wrong! Try reloading the page!');
     console.log(error);
   });
 
@@ -69,6 +76,7 @@ function onSelectBreed(evt) {
     .catch(function (error) {
       errorIndicator.classList.remove('is-hidden');
       loaderIndicator.classList.add('is-hidden');
+      Notify.failure('Oops! Something went wrong! Try reloading the page!');
       console.log(error);
     });
 }
