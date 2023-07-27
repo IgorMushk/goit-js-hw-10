@@ -57,7 +57,13 @@ img {
 }
 
 .breed-select {
-  width: 240px;
+  /* width: 240px;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto; */
+  max-width: 500px;
+  margin: auto;
+  /* color: black; */
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
