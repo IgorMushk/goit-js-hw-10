@@ -30,11 +30,16 @@ p {
 
 .cat-info {
   /* border-radius: 5px; */
-  width: 1024px;
+  /*  */
+  /* width: 1024px; */
+  padding: 10px 5px 10px 5px;
+  width: 500px;
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   /* box-shadow: 10px 5px 5px #5897fb; */
   box-shadow: 0 8px 26px rgba(0, 0, 0, 0.4), 0 28px 30px rgba(0, 0, 0, 0.3);
 }
@@ -44,7 +49,8 @@ p {
 } */
 
 .cat-info-text {
-  width: 640px;
+  /* width: 640px;  */
+  width: 480px;
   margin-left: 20px;
   margin-right: 10px;
 }
@@ -88,4 +94,15 @@ img {
 
 .is-hidden {
   display: none;
+}
+
+@media screen and (min-width: 1200px) {
+  .cat-info {
+    width: 1024px;
+    flex-direction: row;
+  }
+
+  .is-hidden {
+    display: none;
+  }
 }
