@@ -1,3 +1,6 @@
+import SlimSelect from 'slim-select';
+import 'slim-select/dist/slimselect.css';
+
 import { fetchBreeds } from './js/cat-api';
 import { fetchCatByBreed } from './js/cat-api';
 
@@ -25,6 +28,9 @@ fetchBreeds()
       })
       .join('');
     selectBreed.innerHTML = markup;
+    new SlimSelect({
+      select: '#selectElement',
+    });
   })
   .catch(function (error) {
     errorIndicator.classList.remove('is-hidden');
@@ -50,7 +56,7 @@ function onSelectBreed(evt) {
 
       //console.log(data);
       const markup = `
-          <img src="${data[0].url}" alt="${data[0].breeds[0].name}" width="480" />
+          <img src="${data[0].url}" alt="${data[0].breeds[0].name}" />
           <div class="cat-info-text">
               <h2>${data[0].breeds[0].name}</h2>
               <p>${data[0].breeds[0].description}</p>
