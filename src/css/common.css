@@ -25,13 +25,13 @@ p {
   color: red;
 }
 
-.is-hidden {
-  display: none;
-}
-
 .cat-info {
   margin-top: 10px;
   display: flex;
+}
+
+.is-hidden {
+  display: none;
 }
 
 .cat-info-text {
