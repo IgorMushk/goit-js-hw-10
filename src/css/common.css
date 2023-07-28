@@ -101,9 +101,32 @@ img {
 }
 
 @media screen and (min-width: 1200px) {
+  h2 {
+    font-size: 38px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  p {
+    font-size: 18px;
+    margin-bottom: 0px;
+  }
+
   .cat-info {
     width: 1024px;
+    padding: 10px;
     flex-direction: row;
+  }
+
+  .cat-info-text {
+    /* width: 640px;  */
+    width: 480px;
+    margin-left: 20px;
+    margin-right: 10px;
+  }
+
+  img {
+    max-width: 480px;
   }
 
   .is-hidden {
